@@ -7,7 +7,7 @@
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Configure Tailwind to use the 'Inter' font and enable dark mode
+        // Configure Tailwind to use the 'Inter' font and the modern Emerald accent color
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -18,8 +18,9 @@
                     colors: {
                         'primary-dark': '#1e293b', // Slate-800
                         'secondary-dark': '#0f172a', // Slate-900
-                        'accent': '#3b82f6', // Blue-500
-                        'accent-hover': '#2563eb', // Blue-600
+                        // MODERN ACCENT: EMERALD
+                        'accent': '#34d399', // Emerald-400
+                        'accent-hover': '#10b981', // Emerald-500
                         'text-light': '#f8fafc', // Slate-50
                     }
                 }
@@ -35,19 +36,18 @@
             padding-top: 5rem;
             padding-bottom: 5rem;
         }
-        /* Custom styling for cards */
+        
+        /* Enhanced Card Animation */
         .card {
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             transform: translateY(0);
         }
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2); /* Blue shadow on hover */
+            transform: translateY(-5px) scale(1.01); /* Lift and slight scale-up */
+            box-shadow: 0 15px 25px -5px rgba(52, 211, 153, 0.3); /* Emerald shadow on hover */
         }
 
-        /* --- CSS ANIMATIONS ADDED BELOW --- */
-
-        /* 1. Keyframes for Subtle Text Fade-In on Load (for content elements) */
+        /* Keyframes for Subtle Text Fade-In on Load (for content elements) */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -60,11 +60,11 @@
         }
 
         .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.7s ease-out forwards;
             opacity: 0; /* Start invisible */
         }
 
-        /* 2. Keyframes for Gradient Background Animation for Hero Section */
+        /* Keyframes for Enhanced Gradient Background Animation (Hero Section) */
         @keyframes pulse-bg {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -72,10 +72,10 @@
         }
 
         #about.animated-bg {
-            /* Using slight variations of the dark theme for the gradient */
-            background: linear-gradient(-45deg, #1e293b, #0f172a, #1a2333, #0d121c);
+            /* Using the new Emerald accent for the subtle background glow */
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #10b98133, #0f172a);
             background-size: 400% 400%;
-            animation: pulse-bg 15s ease infinite; /* Slow, infinite movement */
+            animation: pulse-bg 12s ease infinite; /* Faster, infinite movement */
         }
     </style>
 </head>
@@ -96,7 +96,7 @@
                         <a href="#skills" class="text-text-light hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition duration-150">Skills</a>
                         <a href="#projects" class="text-text-light hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition duration-150">Projects</a>
                         <a href="#education" class="text-text-light hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition duration-150">Education</a>
-                        <a href="#contact" class="bg-accent hover:bg-accent-hover text-text-light px-3 py-2 rounded-md text-sm font-medium transition duration-150">Contact</a>
+                        <a href="#contact" class="bg-accent hover:bg-accent-hover text-secondary-dark px-3 py-2 rounded-md text-sm font-medium transition duration-150">Contact</a>
                     </div>
                 </div>
                 <!-- Mobile Menu Button (Hamburger) -->
@@ -117,39 +117,36 @@
                 <a href="#skills" class="block text-text-light hover:bg-primary-dark hover:text-accent px-3 py-2 rounded-md text-base font-medium transition duration-150">Skills</a>
                 <a href="#projects" class="block text-text-light hover:bg-primary-dark hover:text-accent px-3 py-2 rounded-md text-base font-medium transition duration-150">Projects</a>
                 <a href="#education" class="block text-text-light hover:bg-primary-dark hover:text-accent px-3 py-2 rounded-md text-base font-medium transition duration-150">Education</a>
-                <a href="#contact" class="block bg-accent hover:bg-accent-hover text-text-light px-3 py-2 rounded-md text-base font-medium transition duration-150">Contact</a>
+                <a href="#contact" class="block bg-accent hover:bg-accent-hover text-secondary-dark px-3 py-2 rounded-md text-base font-medium transition duration-150">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <!-- Added animated-bg class to trigger the gradient animation -->
     <header id="about" class="section-padding bg-primary-dark animated-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
                 <!-- Profile Image Placeholder (Applied Fade-In-Up with delay) -->
                 <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-accent shadow-2xl animate-fade-in-up" style="animation-delay: 0.1s;">
-                    <img src="https://placehold.co/192x192/0f172a/3b82f6?text=TX+Y" alt="Profile Picture" class="w-full h-full object-cover">
+                    <img src="https://placehold.co/192x192/0f172a/34d399?text=TX+Y" alt="Profile Picture" class="w-full h-full object-cover">
                 </div>
                 <!-- Text Content -->
                 <div class="md:text-left text-center">
-                    <!-- Applied Fade-In-Up with delay -->
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-light leading-tight animate-fade-in-up" style="animation-delay: 0.3s;">
                         Hi, I'm <span class="text-accent">Tham Xin Yuan</span>
                     </h1>
-                    <!-- Applied Fade-In-Up with delay -->
                     <p class="mt-2 text-xl sm:text-2xl text-gray-400 font-medium animate-fade-in-up" style="animation-delay: 0.5s;">
                         BSc (Hons) e-Business Technology & Management Student (Level 6)
                     </p>
-                    <!-- Applied Fade-In-Up with delay -->
                     <p class="mt-6 max-w-2xl text-lg text-gray-300 mx-auto md:mx-0 animate-fade-in-up" style="animation-delay: 0.7s;">
-                        Passionate about leveraging the intersection of **e-Business strategies, technical development (C, PHP), and data management** to build and optimize modern digital systems. Currently pursuing a Level 6 degree focused on technology and enterprise solutions.
+                        Passionate about leveraging the intersection of <strong class="font-semibold text-accent/80">e-Business strategies, technical development (C, PHP), and data management</strong> to build and optimize modern digital systems. Currently pursuing a Level 6 degree focused on technology and enterprise solutions.
                     </p>
-                    <!-- Applied Fade-In-Up with delay -->
+                    <!-- DELETED: The following button group was removed:
                     <div class="mt-8 flex justify-center md:justify-start space-x-4 animate-fade-in-up" style="animation-delay: 0.9s;">
-                        <a href="#projects" class="bg-accent hover:bg-accent-hover text-text-light font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg">View Projects</a>
+                        <a href="#projects" class="bg-accent hover:bg-accent-hover text-secondary-dark font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg">View Projects</a>
                         <a href="mailto:your.email@example.com" class="bg-gray-700 hover:bg-gray-600 text-text-light font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg">Get In Touch</a>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
@@ -161,74 +158,115 @@
             <h2 class="text-3xl sm:text-4xl font-bold text-center text-accent mb-12">Core Competencies</h2>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Technical Stack (Validated against BEM curriculum) -->
+                <!-- Technical Stack Card - FIXED ALIGNMENT -->
                 <div class="bg-primary-dark p-6 rounded-xl shadow-xl card">
                     <h3 class="text-2xl font-semibold mb-4 text-text-light border-b border-gray-700 pb-2">Technical Stack</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">💻</span>
-                            **Web Development:** HTML, CSS (Tailwind), JavaScript
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">⚙️</span>
-                            **Backend/Open Source:** PHP, C (Programming Fundamentals, Algorithmic Design)
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">🗄️</span>
-                            **Data:** SQL (Database Design & Management)
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">🛡️</span>
-                            **Networking:** OSI Model, Basic Network/Computer Configuration, Threat Analysis
-                        </li>
-                    </ul>
+                    
+                    <!-- Updated: Increased Title width (col-span-5) and Gap (gap-2) to prevent overlap -->
+                    <div class="space-y-3 text-gray-300">
+                        
+                        <!-- Skill Item: Web Development -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">💻</span>
+                            <span class="col-span-5 font-semibold text-text-light">Web Development:</span>
+                            <span class="col-span-6">HTML, CSS (Tailwind), JavaScript</span>
+                        </div>
+                        
+                        <!-- Skill Item: Backend/Open Source -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">⚙️</span>
+                            <span class="col-span-5 font-semibold text-text-light">Backend/Open Source:</span>
+                            <span class="col-span-6">PHP, C (Programming Fundamentals, Algorithmic Design)</span>
+                        </div>
+                        
+                        <!-- Skill Item: Data -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">🗄️</span>
+                            <span class="col-span-5 font-semibold text-text-light">Data:</span>
+                            <span class="col-span-6">SQL (Database Design & Management)</span>
+                        </div>
+                        
+                        <!-- Skill Item: Networking -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">🛡️</span>
+                            <span class="col-span-5 font-semibold text-text-light">Networking:</span>
+                            <span class="col-span-6">OSI Model, Basic Network/Computer Configuration, Threat Analysis</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- e-Business & Management Expertise (Updated based on BEM curriculum) -->
+                <!-- e-Business & Management Expertise Card - FIXED ALIGNMENT -->
                 <div class="bg-primary-dark p-6 rounded-xl shadow-xl card">
                     <h3 class="text-2xl font-semibold mb-4 text-text-light border-b border-gray-700 pb-2">e-Business & Management Expertise</h3>
-                    <p class="text-sm text-gray-400 mb-4">Core concepts from e-Business Technology & Management:</p>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">📈</span>
-                            **System Modelling:** Requirement Analysis, System Design (UML, Use Cases)
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">🗓️</span>
-                            **Project Management:** Planning, Monitoring, and Control Techniques
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">🔗</span>
-                            **Supply Chain Management:** Logistics, Operations, and Technology Integration
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">⚖️</span>
-                            **E-Commerce Strategy:** Digital Marketing, E-Business Law and Ethics
-                        </li>
-                    </ul>
+                    
+                    <!-- Updated: Increased Title width (col-span-5) and Gap (gap-2) to prevent overlap -->
+                    <div class="space-y-3 text-gray-300">
+                        
+                        <!-- Skill Item: System Modelling -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">📈</span>
+                            <span class="col-span-5 font-semibold text-text-light">System Modelling:</span>
+                            <span class="col-span-6">Requirement Analysis, System Design (UML, Use Cases)</span>
+                        </div>
+                        
+                        <!-- Skill Item: Project Management -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">🗓️</span>
+                            <span class="col-span-5 font-semibold text-text-light">Project Management:</span>
+                            <span class="col-span-6">Planning, Monitoring, and Control Techniques</span>
+                        </div>
+                        
+                        <!-- Skill Item: Supply Chain Management -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">🔗</span>
+                            <span class="col-span-5 font-semibold text-text-light">Supply Chain Management:</span>
+                            <span class="col-span-6">Logistics, Operations, and Technology Integration</span>
+                        </div>
+                        
+                        <!-- Skill Item: E-Commerce Strategy -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">⚖️</span>
+                            <span class="col-span-5 font-semibold text-text-light">E-Commerce Strategy:</span>
+                            <span class="col-span-6">Digital Marketing, E-Business Law and Ethics</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Soft Skills (Renamed as requested) -->
+                <!-- Soft Skills Card - FIXED ALIGNMENT -->
                 <div class="bg-primary-dark p-6 rounded-xl shadow-xl card">
                     <h3 class="text-2xl font-semibold mb-4 text-text-light border-b border-gray-700 pb-2">Soft Skills</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">🤝</span>
-                            **Collaboration:** Effective teamwork and cross-functional communication
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">💡</span>
-                            **Critical Thinking:** Analyzing complex problems and generating imaginative solutions
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">🗣️</span>
-                            **Communication:** Translating technical requirements to business stakeholders
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-accent mr-2">🧭</span>
-                            **Time Management:** Executing projects and meeting academic deadlines effectively
-                        </li>
-                    </ul>
+                    
+                    <!-- Updated: Increased Title width (col-span-5) and Gap (gap-2) to prevent overlap -->
+                    <div class="space-y-3 text-gray-300">
+                        
+                        <!-- Skill Item: Collaboration -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">🤝</span>
+                            <span class="col-span-5 font-semibold text-text-light">Collaboration:</span>
+                            <span class="col-span-6">Effective teamwork and cross-functional communication</span>
+                        </div>
+                        
+                        <!-- Skill Item: Critical Thinking -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">💡</span>
+                            <span class="col-span-5 font-semibold text-text-light">Critical Thinking:</span>
+                            <span class="col-span-6">Analyzing complex problems and generating imaginative solutions</span>
+                        </div>
+                        
+                        <!-- Skill Item: Communication -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">🗣️</span>
+                            <span class="col-span-5 font-semibold text-text-light">Communication:</span>
+                            <span class="col-span-6">Translating technical requirements to business stakeholders</span>
+                        </div>
+                        
+                        <!-- Skill Item: Time Management -->
+                        <div class="grid grid-cols-12 gap-2 items-start">
+                            <span class="col-span-1 text-accent pt-0.5">🧭</span>
+                            <span class="col-span-5 font-semibold text-text-light">Time Management:</span>
+                            <span class="col-span-6">Executing projects and meeting academic deadlines effectively</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -244,24 +282,20 @@
                 <!-- UPDATED PROJECT CARD: Web Development Assignment -->
                 <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl card flex flex-col lg:flex-row gap-6">
                     <div class="lg:w-1/3">
-                        <img src="https://placehold.co/400x250/1e293b/3b82f6?text=Smartphone+Website+Login" alt="Assignment Demo Screenshot" class="w-full h-auto object-cover rounded-lg">
+                        <!-- Updated placeholder color for better consistency -->
+                        <img src="https://placehold.co/400x250/1e293b/34d399?text=Smartphone+Website+Login" alt="Assignment Demo Screenshot" class="w-full h-auto object-cover rounded-lg">
                     </div>
                     <div class="lg:w-2/3">
                         <h3 class="text-2xl font-bold text-text-light mb-2">Web Dev Assignment: Full-Stack PHP User Management System</h3>
                         <p class="text-sm text-gray-400 mb-4">
-                            **Skills Used:** PHP, SQL, HTML5, CSS3, Full-Stack Development, User Authentication
+                            <strong>Skills Used:</strong> PHP, SQL, HTML5, CSS3, Full-Stack Development, User Authentication
                         </p>
                         <p class="text-gray-300 mb-4">
-                            The **"Smartphone-Website"** assignment required building a complete user registration and login system. This project demonstrates proficiency in **server-side scripting (PHP)** for security and routing, alongside client-side form design.
+                            The <strong class="text-accent/80">"Smartphone-Website"</strong> assignment required building a complete user registration and login system. This project demonstrates proficiency in server-side scripting (PHP) for security and routing, alongside client-side form design.
                         </p>
                         <div class="mt-4 space-x-3">
-                            <!-- CRITICAL: THIS LINK MUST BE ABSOLUTE AND START WITH https:// -->
-                            <a href="https://smartphonewebsite.free.nf/login.php" target="_blank" class="bg-accent hover:bg-accent-hover text-text-light font-semibold py-2 px-4 rounded-lg transition duration-300">
+                            <a href="https://smartphonewebsite.free.nf/login.php" target="_blank" class="bg-accent hover:bg-accent-hover text-secondary-dark font-semibold py-2 px-4 rounded-lg transition duration-300">
                                 View Live Demo &rarr;
-                            </a>
-                            <!-- Link to your GitHub code repository -->
-                            <a href="https://github.com/Xinyuan45/Smartphone-Website" target="_blank" class="text-gray-400 hover:text-text-light font-semibold">
-                                | View Code on GitHub
                             </a>
                         </div>
                     </div>
@@ -291,7 +325,8 @@
                         <div>
                             <p class="text-xl font-bold text-text-light">Foundation In Business & Information Technology (FBI)</p>
                             <p class="text-accent">YPC International College (Aug 2022 - Aug 2023)</p>
-                            <p class="text-gray-400 mt-2">Grade: **GPA: 3.47**</p>
+                            <!-- Used <strong> for GPA bolding -->
+                            <p class="text-gray-400 mt-2"><strong class="text-text-light">GPA: 3.47</strong></p>
                             <p class="text-gray-400">Relevant Coursework: Fundamentals of IT, Business Principles, Introduction to Programming.</p>
                         </div>
                     </div>
@@ -310,12 +345,12 @@
 
             <div class="mt-8 flex justify-center space-x-6">
                 <!-- Email -->
-                <a href="mailto:your.email@example.com" class="text-gray-400 hover:text-accent transition duration-150 flex items-center">
+                <a href="mailto:xinyuan4545@gmail.com" class="text-gray-400 hover:text-accent transition duration-150 flex items-center">
                     <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     Email
                 </a>
                 <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-gray-400 hover:text-accent transition duration-150 flex items-center">
+                <a href="https://www.linkedin.com/in/tham-xin-yuan-5102a0387/" target="_blank" class="text-gray-400 hover:text-accent transition duration-150 flex items-center">
                     <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.332-.027-3.064-1.852-3.064-1.853 0-2.136 1.444-2.136 2.969v5.664h-3.553V9h3.414v1.561h.046c.477-.9 1.637-1.851 3.37-1.851 3.618 0 4.288 2.365 4.288 5.421v6.236zM5.942 3.991c-.961 0-1.737.777-1.737 1.737s.776 1.737 1.737 1.737 1.737-.777 1.737-1.737c0-.96-.776-1.737-1.737-1.737zm-1.782 16.461H7.724V9H4.16V20.452z"/></svg>
                     LinkedIn
                 </a>
@@ -327,7 +362,7 @@
             </div>
 
             <p class="mt-12 text-sm text-gray-600">
-                &copy; 2025 Tham Xin Yuan. Built with Tailwind CSS.
+                &copy; 2025 Tham Xin Yuan.
             </p>
         </div>
     </footer>
