@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business IT Portfolio - [Your Name]</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind to use the 'Inter' font and enable dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-dark': '#1e293b', // Slate-800
+                        'secondary-dark': '#0f172a', // Slate-900
+                        'accent': '#3b82f6', // Blue-500
+                        'accent-hover': '#2563eb', // Blue-600
+                        'text-light': '#f8fafc', // Slate-50
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for smooth scrolling and clean look */
+        html {
+            scroll-behavior: smooth;
+        }
+        .section-padding {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        /* Custom styling for cards */
+        .card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2); /* Blue shadow on hover */
+        }
+    </style>
+</head>
+<body class="bg-secondary-dark text-text-light font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-secondary-dark/95 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold text-accent">Alex Chen</a>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="text-text-light hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition duration-150">About</a>
+                        <a href="#skills" class="text-text-light hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition duration-150">Skills</a>
+                        <a href="#projects" class="text-text-light hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition duration-150">Projects</a>
+                        <a href="#experience" class="text-text-light hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition duration-150">Experience</a>
+                        <a href="#contact" class="bg-accent hover:bg-accent-hover text-text-light px-3 py-2 rounded-md text-sm font-medium transition duration-150">Contact</a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button (Hamburger) -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-text-light hover:text-accent focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block text-text-light hover:bg-primary-dark hover:text-accent px-3 py-2 rounded-md text-base font-medium transition duration-150">About</a>
+                <a href="#skills" class="block text-text-light hover:bg-primary-dark hover:text-accent px-3 py-2 rounded-md text-base font-medium transition duration-150">Skills</a>
+                <a href="#projects" class="block text-text-light hover:bg-primary-dark hover:text-accent px-3 py-2 rounded-md text-base font-medium transition duration-150">Projects</a>
+                <a href="#experience" class="block text-text-light hover:bg-primary-dark hover:text-accent px-3 py-2 rounded-md text-base font-medium transition duration-150">Experience</a>
+                <a href="#contact" class="block bg-accent hover:bg-accent-hover text-text-light px-3 py-2 rounded-md text-base font-medium transition duration-150">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="about" class="section-padding bg-primary-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                <!-- Profile Image Placeholder (Replace with your actual image) -->
+                <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-accent shadow-2xl">
+                    <img src="https://placehold.co/192x192/0f172a/3b82f6?text=AC" alt="Profile Picture" class="w-full h-full object-cover">
+                </div>
+                <!-- Text Content -->
+                <div class="md:text-left text-center">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-light leading-tight">
+                        Hi, I'm <span class="text-accent">Alex Chen</span>
+                    </h1>
+                    <p class="mt-2 text-xl sm:text-2xl text-gray-400 font-medium">
+                        Business Systems Analyst & Full Stack Developer (B.I.T. Student)
+                    </p>
+                    <p class="mt-6 max-w-2xl text-lg text-gray-300 mx-auto md:mx-0">
+                        Passionate about leveraging **data and cloud technologies** to drive strategic business outcomes. Currently mastering the intersection of IT infrastructure, data analysis, and project management to optimize enterprise solutions.
+                    </p>
+                    <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                        <a href="#projects" class="bg-accent hover:bg-accent-hover text-text-light font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg">View Projects</a>
+                        <a href="mailto:your.email@example.com" class="bg-gray-700 hover:bg-gray-600 text-text-light font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-accent mb-12">Core Competencies</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Technical Skills -->
+                <div class="bg-primary-dark p-6 rounded-xl shadow-xl card">
+                    <h3 class="text-2xl font-semibold mb-4 text-text-light border-b border-gray-700 pb-2">Technical Stack</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">⚙️</span>
+                            **Data:** SQL (Advanced), Python (Pandas/NumPy), Tableau/Power BI
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">☁️</span>
+                            **Cloud/DevOps:** AWS (S3, EC2), Docker, Basic CI/CD
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">💻</span>
+                            **Web:** HTML, CSS (Tailwind), JavaScript, Node.js/React (Basics)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">🛡️</span>
+                            **Security/Networking:** Basic network configuration, OSI Model, Threat Analysis
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Business Analysis Skills -->
+                <div class="bg-primary-dark p-6 rounded-xl shadow-xl card">
+                    <h3 class="text-2xl font-semibold mb-4 text-text-light border-b border-gray-700 pb-2">Business Analysis</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">📊</span>
+                            **Requirements Gathering:** Use Case Diagrams, User Stories, MoSCoW
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">📈</span>
+                            **Process Modeling:** BPMN, Value Stream Mapping, Gap Analysis
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">🎯</span>
+                            **System Implementation:** ERP/CRM System evaluation and integration support
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">💰</span>
+                            **Financial Acumen:** Basic P&L analysis, IT budgeting, ROI justification
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="bg-primary-dark p-6 rounded-xl shadow-xl card">
+                    <h3 class="text-2xl font-semibold mb-4 text-text-light border-b border-gray-700 pb-2">Professional Skills</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">🤝</span>
+                            **Communication:** Translating technical concepts to non-technical stakeholders
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">🚀</span>
+                            **Project Management:** Agile (Scrum), JIRA/Trello familiarity
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">💡</span>
+                            **Problem Solving:** Critical thinking, Root Cause Analysis (RCA)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2">🧑‍💻</span>
+                            **Teamwork:** Experience leading small teams in technical projects
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-primary-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-accent mb-12">Key Business-IT Projects</h2>
+
+            <div class="space-y-12">
+                <!-- Project 1: Data-Driven Inventory Optimization -->
+                <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl card flex flex-col lg:flex-row gap-6">
+                    <div class="lg:w-1/3">
+                        <img src="https://placehold.co/400x250/1e293b/3b82f6?text=Inventory+Model" alt="Project Image" class="w-full h-auto object-cover rounded-lg">
+                    </div>
+                    <div class="lg:w-2/3">
+                        <h3 class="text-2xl font-bold text-text-light mb-2">Data-Driven Inventory Optimization Model</h3>
+                        <p class="text-sm text-gray-400 mb-4">
+                            **Skills Used:** Python, Pandas, SQL, Data Visualization (Power BI)
+                        </p>
+                        <p class="text-gray-300 mb-4">
+                            Developed a predictive model using Python to analyze 12 months of sales data, identifying optimal reorder points for 500+ SKUs. Integrated the output into a SQL database for real-time inventory management.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1">
+                            <li>**Business Impact:** Projected reduction of stockouts by **18%** and lowered carrying costs by **6%** over Q4.</li>
+                            <li>**Technical Solution:** Custom SQL stored procedure for report generation; automated Python script for nightly data refresh.</li>
+                        </ul>
+                        <div class="mt-4 space-x-3">
+                            <a href="#" class="text-accent hover:text-accent-hover font-semibold">View Case Study &rarr;</a>
+                            <a href="#" class="text-gray-400 hover:text-text-light">| GitHub Link</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Cloud Migration and Cost Analysis -->
+                <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl card flex flex-col lg:flex-row gap-6">
+                    <div class="lg:w-1/3">
+                        <img src="https://placehold.co/400x250/1e293b/3b82f6?text=Cloud+Architecture" alt="Project Image" class="w-full h-auto object-cover rounded-lg">
+                    </div>
+                    <div class="lg:w-2/3">
+                        <h3 class="text-2xl font-bold text-text-light mb-2">SaaS Deployment Cost Reduction Blueprint</h3>
+                        <p class="text-sm text-gray-400 mb-4">
+                            **Skills Used:** AWS (EC2, S3), Cloud Cost Analysis, Requirements Gathering (BPMN)
+                        </p>
+                        <p class="text-gray-300 mb-4">
+                            Simulated the migration of a legacy on-premise application to an AWS cloud environment. Conducted a detailed TCO (Total Cost of Ownership) analysis to determine the most efficient architecture (IaaS vs. PaaS).
+                        </p>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1">
+                            <li>**Business Impact:** Identified an optimized architecture leading to an estimated **25% savings** in annual infrastructure costs.</li>
+                            <li>**Technical Solution:** Developed a basic infrastructure-as-code (IaC) template (using mock code) for quick deployment and scaling.</li>
+                        </ul>
+                        <div class="mt-4 space-x-3">
+                            <a href="#" class="text-accent hover:text-accent-hover font-semibold">View Report &rarr;</a>
+                            <a href="#" class="text-gray-400 hover:text-text-light">| Presentation Slides</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience/Education Section -->
+    <section id="experience" class="section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-accent mb-12">Education & Experience</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education -->
+                <div class="bg-primary-dark p-6 rounded-xl shadow-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-text-light border-b border-gray-700 pb-2">Education</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-xl font-bold text-text-light">B.S. Business Information Technology</p>
+                            <p class="text-accent">University Name (2022 - 2026)</p>
+                            <p class="text-gray-400 mt-2">Relevant Coursework: Database Management Systems, Enterprise Resource Planning, IT Project Management, Business Statistics.</p>
+                            <p class="text-gray-400">GPA: 3.8/4.0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="bg-primary-dark p-6 rounded-xl shadow-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-text-light border-b border-gray-700 pb-2">Professional Experience</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-xl font-bold text-text-light">IT Business Analyst Intern</p>
+                            <p class="text-accent">Tech Solutions Corp (Summer 2024)</p>
+                            <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1">
+                                <li>Assisted in documenting user requirements for a new CRM module, bridging the gap between sales and development teams.</li>
+                                <li>Created dashboard prototypes using Power BI to visualize system uptime and user adoption rates.</li>
+                                <li>Participated in daily Scrum meetings and sprint reviews.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact" class="section-padding bg-secondary-dark border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-text-light mb-4">Let's Connect</h2>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                I'm currently seeking a full-time role or a final-year internship in Business Analysis or System Development. Feel free to reach out to discuss collaboration or job opportunities.
+            </p>
+
+            <div class="mt-8 flex justify-center space-x-6">
+                <!-- Email -->
+                <a href="mailto:your.email@example.com" class="text-gray-400 hover:text-accent transition duration-150 flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    Email
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-gray-400 hover:text-accent transition duration-150 flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.332-.027-3.064-1.852-3.064-1.853 0-2.136 1.444-2.136 2.969v5.664h-3.553V9h3.414v1.561h.046c.477-.9 1.637-1.851 3.37-1.851 3.618 0 4.288 2.365 4.288 5.421v6.236zM5.942 3.991c-.961 0-1.737.777-1.737 1.737s.776 1.737 1.737 1.737 1.737-.777 1.737-1.737c0-.96-.776-1.737-1.737-1.737zm-1.782 16.461H7.724V9H4.16V20.452z"/></svg>
+                    LinkedIn
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/yourprofile" target="_blank" class="text-gray-400 hover:text-accent transition duration-150 flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.463 2 11.979c0 4.416 2.868 8.161 6.843 9.488.499.093.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.376-1.341-3.376-1.341-.454-1.154-1.107-1.464-1.107-1.464-.908-.62.069-.608.069-.608 1.004.072 1.531 1.032 1.531 1.032.892 1.529 2.341 1.085 2.91.828.092-.643.344-1.085.626-1.334-2.227-.253-4.555-1.114-4.555-4.943 0-1.09.39-1.979 1.029-2.675-.103-.254-.447-1.266.098-2.636 0 0 .84-.268 2.75 1.025.79-.219 1.633-.328 2.477-.333 1.517.005 3.033.328 4.286 1.025 1.909-1.293 2.748-1.025 2.748-1.025.546 1.37.202 2.382.098 2.636.64.696 1.028 1.585 1.028 2.675 0 3.839-2.33 4.686-4.568 4.935.359.308.678.917.678 1.846 0 1.334-.012 2.41-.012 2.729 0 .267.18.581.687.488C19.13 20.14 22 16.395 22 11.979 22 6.463 17.523 2 12 2z"/></svg>
+                    GitHub
+                </a>
+            </div>
+
+            <p class="mt-12 text-sm text-gray-600">
+                &copy; 2025 [Your Name]. Built with Tailwind CSS.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Smooth Scrolling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('#mobile-menu a, nav .md\\:block a');
+
+            // Toggle mobile menu visibility
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Smooth scrolling and closing mobile menu on link click
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Only prevent default if it's an internal hash link
+                    if (link.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 64, // Subtract nav height
+                                behavior: 'smooth'
+                            });
+                        }
+
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
