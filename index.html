@@ -46,8 +46,18 @@
             transform: translateY(-5px) scale(1.01); /* Lift and slight scale-up */
             box-shadow: 0 15px 25px -5px rgba(52, 211, 153, 0.3); /* Emerald shadow on hover */
         }
+        
+        /* --- IMAGE SCALING FOR PROJECT CARD (Re-added) --- */
+        .project-image {
+            transition: transform 0.3s ease-in-out;
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.05); /* Scales the image up by 5% on card hover */
+        }
+        /* --- END IMAGE SCALING --- */
 
-        /* Keyframes for Subtle Text Fade-In on Load (for content elements) */
+
+        /* Keyframes for Subtle Text Fade-In on Load and Scroll */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -58,10 +68,17 @@
                 transform: translateY(0);
             }
         }
-
+        
+        /* Class applied by JavaScript for scroll-based animation */
         .animate-fade-in-up {
             animation: fadeInUp 0.7s ease-out forwards;
-            opacity: 0; /* Start invisible */
+        }
+        
+        /* Initial state for elements waiting for scroll-reveal */
+        .scroll-hidden {
+            opacity: 0;
+            /* Ensures non-animated sections don't start hidden */
+            transition: opacity 0s, transform 0s; 
         }
 
         /* Keyframes for Enhanced Gradient Background Animation (Hero Section) */
@@ -122,11 +139,11 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Loads immediately - retains animate-fade-in-up) -->
     <header id="about" class="section-padding bg-primary-dark animated-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
-                <!-- Profile Image Placeholder (Applied Fade-In-Up with delay) -->
+                <!-- Profile Image Placeholder -->
                 <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-accent shadow-2xl animate-fade-in-up" style="animation-delay: 0.1s;">
                     <img src="./asset/profile.jpg" alt="Profile Picture" class="w-full h-full object-cover">
                 </div>
@@ -141,19 +158,13 @@
                     <p class="mt-6 max-w-2xl text-lg text-gray-300 mx-auto md:mx-0 animate-fade-in-up" style="animation-delay: 0.7s;">
                         Passionate about leveraging the intersection of <strong class="font-semibold text-accent/80">e-Business strategies, technical development (C, PHP), and data management</strong> to build and optimize modern digital systems. Currently pursuing a Level 6 degree focused on technology and enterprise solutions.
                     </p>
-                    <!-- DELETED: The following button group was removed:
-                    <div class="mt-8 flex justify-center md:justify-start space-x-4 animate-fade-in-up" style="animation-delay: 0.9s;">
-                        <a href="#projects" class="bg-accent hover:bg-accent-hover text-secondary-dark font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg">View Projects</a>
-                        <a href="mailto:your.email@example.com" class="bg-gray-700 hover:bg-gray-600 text-text-light font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg">Get In Touch</a>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section-padding">
+    <!-- Skills Section (Starts hidden, reveals on scroll) -->
+    <section id="skills" class="section-padding scroll-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl sm:text-4xl font-bold text-center text-accent mb-12">Core Competencies</h2>
 
@@ -272,18 +283,20 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section-padding bg-primary-dark">
+    <!-- Projects Section (Starts hidden, reveals on scroll) -->
+    <section id="projects" class="section-padding bg-primary-dark scroll-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl sm:text-4xl font-bold text-center text-accent mb-12">Key Business-IT Project</h2>
 
             <div class="space-y-12">
                 
                 <!-- UPDATED PROJECT CARD: Web Development Assignment -->
-                <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl card flex flex-col lg:flex-row gap-6">
-                    <div class="lg:w-1/3">
-                        <!-- Updated placeholder color for better consistency -->
-                        <img src="./asset/brand.png" alt="Website Logo" class="w-full h-auto object-cover rounded-lg">
+                <!-- Added project-card class for hover effect target -->
+                <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl card project-card flex flex-col lg:flex-row gap-6">
+                    <!-- Image container adjusted for better vertical centering and size control -->
+                    <div class="lg:w-1/3 flex items-center justify-center">
+                        <!-- image classes updated for better responsiveness: max-h-64 and object-contain -->
+                        <img src="./asset/brand.png" alt="Website Logo" class="w-full h-auto object-contain rounded-lg max-h-64 project-image">
                     </div>
                     <div class="lg:w-2/3">
                         <h3 class="text-2xl font-bold text-text-light mb-2">Web Dev Assignment: Full-Stack PHP User Management System</h3>
@@ -305,8 +318,8 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section-padding">
+    <!-- Education Section (Starts hidden, reveals on scroll) -->
+    <section id="education" class="section-padding scroll-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl sm:text-4xl font-bold text-center text-accent mb-12">Education</h2>
 
@@ -335,8 +348,8 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <footer id="contact" class="section-padding bg-secondary-dark border-t border-gray-800">
+    <!-- Contact Section (Starts hidden, reveals on scroll) -->
+    <footer id="contact" class="section-padding bg-secondary-dark border-t border-gray-800 scroll-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl sm:text-4xl font-bold text-text-light mb-4">Let's Connect</h2>
             <p class="text-lg text-gray-400 max-w-2xl mx-auto">
@@ -347,7 +360,7 @@
                 <!-- Email -->
                 <a href="mailto:xinyuan4545@gmail.com" class="text-gray-400 hover:text-accent transition duration-150 flex items-center">
                     <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    Email
+                    xinyuan4545@gmail.com
                 </a>
                 <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/tham-xin-yuan-5102a0387/" target="_blank" class="text-gray-400 hover:text-accent transition duration-150 flex items-center">
@@ -362,29 +375,28 @@
             </div>
 
             <p class="mt-12 text-sm text-gray-600">
-                &copy; 2025 Tham Xin Yuan.
+                &copy; 2025 Tham Xin Yuan. Built with Tailwind CSS.
             </p>
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu and Smooth Scrolling -->
+    <!-- JavaScript for Mobile Menu, Smooth Scrolling, and Scroll Reveal -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const navLinks = document.querySelectorAll('#mobile-menu a, nav .md\\:block a');
 
-            // Toggle mobile menu visibility
+            // --- Mobile Menu Toggle ---
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
                 });
             }
 
-            // Smooth scrolling and closing mobile menu on link click
+            // --- Smooth Scrolling ---
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    // Only prevent default if it's an internal hash link
                     if (link.getAttribute('href').startsWith('#')) {
                         e.preventDefault();
                         const targetId = link.getAttribute('href').substring(1);
@@ -404,11 +416,38 @@
                     }
                 });
             });
+
+            // --- New: Scroll Reveal Animation ---
+            // Target all sections that should fade in on scroll
+            const scrollTargets = document.querySelectorAll('.scroll-hidden');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    // Check if the target element is intersecting (in view)
+                    if (entry.isIntersecting) {
+                        // Add the animation class to trigger the fade-in
+                        entry.target.classList.add('animate-fade-in-up');
+                        // Remove the initial hidden class (optional, but good practice)
+                        entry.target.classList.remove('scroll-hidden');
+                        
+                        // Stop observing this element once it's revealed
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                // The root is the viewport
+                root: null,
+                // Trigger when 10% of the element is visible
+                threshold: 0.1, 
+                // Start observing slightly before the element enters the bottom of the viewport
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            // Attach the observer to all target elements
+            scrollTargets.forEach(target => {
+                observer.observe(target);
+            });
         });
     </script>
 </body>
 </html>
-
-
-
-
