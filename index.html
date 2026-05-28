@@ -289,31 +289,66 @@
             <h2 class="text-3xl sm:text-4xl font-bold text-center text-accent mb-12">Key Business-IT Project</h2>
 
             <div class="space-y-12">
-                
-                <!-- UPDATED PROJECT CARD: Web Development Assignment -->
-                <!-- Added project-card class for hover effect target -->
-                <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl card project-card flex flex-col lg:flex-row gap-6">
-                    <!-- Image container adjusted for better vertical centering and size control -->
-                    <div class="lg:w-1/3 flex items-center justify-center">
-                        <!-- image classes updated for better responsiveness: max-h-64 and object-contain -->
-                        <img src="./asset/brand.png" alt="Website Logo" class="w-full h-auto object-contain rounded-lg max-h-64 project-image">
+
+                <!-- PROJECT CARD: Deep Ocean Fishing Game -->
+                <div class="bg-secondary-dark p-6 rounded-xl shadow-2xl card project-card flex flex-col gap-6">
+                    <!-- Top: Project Header -->
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-4 border-b border-gray-700 pb-4">
+                        <div class="flex-shrink-0 bg-primary-dark rounded-xl p-3 flex items-center justify-center w-14 h-14">
+                            <span class="text-3xl">🎣</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-text-light">Deep Ocean Fishing — Web-Based Fishing Simulator</h3>
+                            <p class="text-sm text-gray-400 mt-1">
+                                <strong>Skills Used:</strong> PHP, Java Spring Boot API, HTML5, CSS3 (Bootstrap 5), MySQL/MariaDB, Full-Stack Development, REST API Design
+                            </p>
+                        </div>
+                        <a href="https://trello.com/b/0AfGfqPw/fishing-game" target="_blank" class="ml-auto flex-shrink-0 flex items-center gap-2 bg-accent hover:bg-accent-hover text-secondary-dark font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm whitespace-nowrap">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.3 3 3 3h18c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3zM10.4 16.3c0 .6-.5 1.1-1.1 1.1H5.1c-.6 0-1.1-.5-1.1-1.1V5.1C4 4.5 4.5 4 5.1 4h4.2c.6 0 1.1.5 1.1 1.1v11.2zm9.6-5.4c0 .6-.5 1.1-1.1 1.1h-4.2c-.6 0-1.1-.5-1.1-1.1V5.1c0-.6.5-1.1 1.1-1.1h4.2c.6 0 1.1.5 1.1 1.1v5.8z"/></svg>
+                            View Trello Board &rarr;
+                        </a>
                     </div>
-                    <div class="lg:w-2/3">
-                        <h3 class="text-2xl font-bold text-text-light mb-2">Web Dev Assignment: Full-Stack PHP User Management System</h3>
-                        <p class="text-sm text-gray-400 mb-4">
-                            <strong>Skills Used:</strong> PHP, SQL, HTML5, CSS3, Full-Stack Development, User Authentication
-                        </p>
-                        <p class="text-gray-300 mb-4">
-                            The <strong class="text-accent/80">"XyPhone Reco"</strong> required building a complete user registration, login system, also favorite phone system and save in database. This project demonstrates proficiency in server-side scripting (PHP) for security and routing, alongside client-side form design.
-                        </p>
-                        <div class="mt-4 space-x-3">
-                            <a href="https://smartphonewebsite.free.nf/login.php" target="_blank" class="bg-accent hover:bg-accent-hover text-secondary-dark font-semibold py-2 px-4 rounded-lg transition duration-300">
-                                View Live Demo &rarr;
-                            </a>
+
+                    <!-- Middle: Description -->
+                    <p class="text-gray-300">
+                        An interactive, multi-tiered web-based fishing simulator where players progress through increasingly hostile ocean zones, upgrade gear, and compete to catch legendary deep-sea creatures. Built with a custom <strong class="text-accent/80">Java Spring Boot API</strong> handling all game logic, fish roll calculations, and random generation — decoupled from the <strong class="text-accent/80">PHP + Bootstrap 5 frontend</strong> via REST.
+                    </p>
+
+                    <!-- Bottom: Feature Grid & Tech Stack -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Maps / Zones -->
+                        <div class="bg-primary-dark rounded-lg p-4">
+                            <h4 class="font-semibold text-accent mb-3 flex items-center gap-2"><span>🗺️</span> Maps & Minigames</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">☀️</span><span><strong class="text-text-light">Sunny Coast</strong> — Timing-based click minigame</span></li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">🪸</span><span><strong class="text-text-light">Coral Reef</strong> — Physics bar balance mechanic</span></li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">🌊</span><span><strong class="text-text-light">Deep Trench</strong> — Fast-paced sequence entry</span></li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">🕳️</span><span><strong class="text-text-light">Abyssal Void</strong> — Gravity-defying center balance</span></li>
+                            </ul>
+                        </div>
+                        <!-- Core Systems -->
+                        <div class="bg-primary-dark rounded-lg p-4">
+                            <h4 class="font-semibold text-accent mb-3 flex items-center gap-2"><span>⚙️</span> Core Systems</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">🎰</span><span><strong class="text-text-light">Fishing Engine</strong> — Dynamic catch rates based on rod stats & bait quality</span></li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">💰</span><span><strong class="text-text-light">Economy & Progression</strong> — In-game currency, gear upgrades, leaderboards</span></li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">📚</span><span><strong class="text-text-light">Ecosystem Encyclopedia</strong> — Interactive species catalogue</span></li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">🛠️</span><span><strong class="text-text-light">Admin Dashboard</strong> — Manage shop prices, luck attributes & species pool</span></li>
+                            </ul>
                         </div>
                     </div>
+
+                    <!-- Tech Stack Tags -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary-dark text-accent text-xs font-semibold px-3 py-1 rounded-full border border-accent/30">PHP</span>
+                        <span class="bg-primary-dark text-accent text-xs font-semibold px-3 py-1 rounded-full border border-accent/30">Java Spring Boot</span>
+                        <span class="bg-primary-dark text-accent text-xs font-semibold px-3 py-1 rounded-full border border-accent/30">REST API</span>
+                        <span class="bg-primary-dark text-accent text-xs font-semibold px-3 py-1 rounded-full border border-accent/30">Bootstrap 5</span>
+                        <span class="bg-primary-dark text-accent text-xs font-semibold px-3 py-1 rounded-full border border-accent/30">MySQL / MariaDB</span>
+                        <span class="bg-primary-dark text-accent text-xs font-semibold px-3 py-1 rounded-full border border-accent/30">Session Management</span>
+                    </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
